@@ -75,3 +75,4 @@ void Game::moveCurrentMinoDown() {
         renderer.drawMino(currentMino);
     }
 }
+//test
