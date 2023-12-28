@@ -1,0 +1,44 @@
+[
+{
+  "directory": "C:/Users/qjaqj/Desktop/vscode/Projects/tetrimino-game/build",
+  "command": "C:\\MinGW\\bin\\g++.exe  @CMakeFiles/tetrimino-game.dir/includes_CXX.rsp -g -o CMakeFiles\\tetrimino-game.dir\\src\\main.cpp.obj -c C:\\Users\\qjaqj\\Desktop\\vscode\\Projects\\tetrimino-game\\src\\main.cpp",
+  "file": "C:/Users/qjaqj/Desktop/vscode/Projects/tetrimino-game/src/main.cpp",
+  "output": "CMakeFiles/tetrimino-game.dir/src/main.cpp.obj"
+},
+{
+  "directory": "C:/Users/qjaqj/Desktop/vscode/Projects/tetrimino-game/build",
+  "command": "C:\\MinGW\\bin\\g++.exe  @CMakeFiles/tetrimino-game.dir/includes_CXX.rsp -g -o CMakeFiles\\tetrimino-game.dir\\src\\direction.cpp.obj -c C:\\Users\\qjaqj\\Desktop\\vscode\\Projects\\tetrimino-game\\src\\direction.cpp",
+  "file": "C:/Users/qjaqj/Desktop/vscode/Projects/tetrimino-game/src/direction.cpp",
+  "output": "CMakeFiles/tetrimino-game.dir/src/direction.cpp.obj"
+},
+{
+  "directory": "C:/Users/qjaqj/Desktop/vscode/Projects/tetrimino-game/build",
+  "command": "C:\\MinGW\\bin\\g++.exe  @CMakeFiles/tetrimino-game.dir/includes_CXX.rsp -g -o CMakeFiles\\tetrimino-game.dir\\src\\eventHandler.cpp.obj -c C:\\Users\\qjaqj\\Desktop\\vscode\\Projects\\tetrimino-game\\src\\eventHandler.cpp",
+  "file": "C:/Users/qjaqj/Desktop/vscode/Projects/tetrimino-game/src/eventHandler.cpp",
+  "output": "CMakeFiles/tetrimino-game.dir/src/eventHandler.cpp.obj"
+},
+{
+  "directory": "C:/Users/qjaqj/Desktop/vscode/Projects/tetrimino-game/build",
+  "command": "C:\\MinGW\\bin\\g++.exe  @CMakeFiles/tetrimino-game.dir/includes_CXX.rsp -g -o CMakeFiles\\tetrimino-game.dir\\src\\game.cpp.obj -c C:\\Users\\qjaqj\\Desktop\\vscode\\Projects\\tetrimino-game\\src\\game.cpp",
+  "file": "C:/Users/qjaqj/Desktop/vscode/Projects/tetrimino-game/src/game.cpp",
+  "output": "CMakeFiles/tetrimino-game.dir/src/game.cpp.obj"
+},
+{
+  "directory": "C:/Users/qjaqj/Desktop/vscode/Projects/tetrimino-game/build",
+  "command": "C:\\MinGW\\bin\\g++.exe  @CMakeFiles/tetrimino-game.dir/includes_CXX.rsp -g -o CMakeFiles\\tetrimino-game.dir\\src\\map.cpp.obj -c C:\\Users\\qjaqj\\Desktop\\vscode\\Projects\\tetrimino-game\\src\\map.cpp",
+  "file": "C:/Users/qjaqj/Desktop/vscode/Projects/tetrimino-game/src/map.cpp",
+  "output": "CMakeFiles/tetrimino-game.dir/src/map.cpp.obj"
+},
+{
+  "directory": "C:/Users/qjaqj/Desktop/vscode/Projects/tetrimino-game/build",
+  "command": "C:\\MinGW\\bin\\g++.exe  @CMakeFiles/tetrimino-game.dir/includes_CXX.rsp -g -o CMakeFiles\\tetrimino-game.dir\\src\\mino.cpp.obj -c C:\\Users\\qjaqj\\Desktop\\vscode\\Projects\\tetrimino-game\\src\\mino.cpp",
+  "file": "C:/Users/qjaqj/Desktop/vscode/Projects/tetrimino-game/src/mino.cpp",
+  "output": "CMakeFiles/tetrimino-game.dir/src/mino.cpp.obj"
+},
+{
+  "directory": "C:/Users/qjaqj/Desktop/vscode/Projects/tetrimino-game/build",
+  "command": "C:\\MinGW\\bin\\g++.exe  @CMakeFiles/tetrimino-game.dir/includes_CXX.rsp -g -o CMakeFiles\\tetrimino-game.dir\\src\\renderer.cpp.obj -c C:\\Users\\qjaqj\\Desktop\\vscode\\Projects\\tetrimino-game\\src\\renderer.cpp",
+  "file": "C:/Users/qjaqj/Desktop/vscode/Projects/tetrimino-game/src/renderer.cpp",
+  "output": "CMakeFiles/tetrimino-game.dir/src/renderer.cpp.obj"
+}
+]

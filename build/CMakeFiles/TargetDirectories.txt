@@ -1,0 +1,5 @@
+C:/Users/qjaqj/Desktop/vscode/Projects/tetrimino-game/build/CMakeFiles/tetrimino-game.dir
+C:/Users/qjaqj/Desktop/vscode/Projects/tetrimino-game/build/CMakeFiles/package.dir
+C:/Users/qjaqj/Desktop/vscode/Projects/tetrimino-game/build/CMakeFiles/package_source.dir
+C:/Users/qjaqj/Desktop/vscode/Projects/tetrimino-game/build/CMakeFiles/edit_cache.dir
+C:/Users/qjaqj/Desktop/vscode/Projects/tetrimino-game/build/CMakeFiles/rebuild_cache.dir

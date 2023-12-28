@@ -1,0 +1,9 @@
+// main.cpp
+#include "../include/game.h"
+
+int main() {
+    Game game;
+    game.run();
+
+    return 0;
+}
