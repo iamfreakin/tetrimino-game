@@ -33,8 +33,7 @@ public:
     void moveCurrentMinoLeft();
     void moveCurrentMinoRight();
     void moveCurrentMinoDown();
-//    void rotateCurrentMinoClockwise();
-//    void rotateCurrentMinoCounterClockwise();
+    void rotateCurrentMinoClockwise();
     void hide_cursor();
     
 };

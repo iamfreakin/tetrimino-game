@@ -2,10 +2,16 @@
 #include "../include/mino.h"
 
 Mino::Mino() {
-    shape[0] = {5, 1};
-    shape[1] = {6, 1};
-    shape[2] = {5, 2};
-    shape[3] = {6, 2};
+
+    setRandomShape();
+}
+
+void Mino::setRandomShape() {
+    std::srand(std::time(0));
+    int randomIndex = std::rand() % 7;
+    for (int i = 0; i < SIZE; ++i) {
+        shape[i] = minoshape[randomIndex][i];
+    }
 }
 
 const Coordinate* Mino::getShape() const {
@@ -37,10 +43,13 @@ void Mino::moveUp() {
 }
 
 void Mino::rotateClockwise() {
+    int tempx = shape[0].X;
+    int tempy = shape[0].Y;
     for (int i = 0; i < SIZE; ++i) {
-        int temp = shape[i].X;
-        shape[i].X = shape[i].Y;
-        shape[i].Y = -temp;
+        int temp = shape[i].X - tempx;
+        shape[i].X = shape[i].Y - tempy + tempx;
+        shape[i].Y = -temp + tempy;
+        
     }
 }
 

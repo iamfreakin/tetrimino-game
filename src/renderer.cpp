@@ -44,7 +44,7 @@ void Renderer::drawMino(const Mino* currentMino) {
         int x = currentMino->getShape()[i].X;
         int y = currentMino->getShape()[i].Y;
         setCursorPosition(x, y);
-        std::cout << "бс";
+        std::cout << "O";
     }
 }
 

@@ -98,6 +98,17 @@ void Game::moveCurrentMinoDown() {
     }
 }
 
+void Game::rotateCurrentMinoClockwise(){
+    renderer.eraesMino(currentMino);
+    currentMino->rotateClockwise();
+
+    if (gameMap.isCollision(currentMino)) {
+        currentMino->rotateCounterClockwise();
+    }
+    
+    renderer.drawMino(currentMino);
+}
+
 void Game::hide_cursor() {
     CONSOLE_CURSOR_INFO cursorInfo = { 0, };
     cursorInfo.dwSize = 1;

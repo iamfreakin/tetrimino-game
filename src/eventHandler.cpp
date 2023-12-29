@@ -24,6 +24,9 @@ void EventHandler::handleInput(Game& game) {
         case Directions::Down:
             game.moveCurrentMinoDown();
             break;
+        case Directions::Clock:
+            game.rotateCurrentMinoClockwise();
+            break;
         case Directions::Exit:
             break;
         default:
