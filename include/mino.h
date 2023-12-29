@@ -1,7 +1,7 @@
 // Mino.h
 #pragma once
 
-#include "Coordinate.h"
+#include "coordinate.h"
 
 class Mino {
 private:

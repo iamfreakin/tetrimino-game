@@ -1,6 +1,7 @@
 // EventHandler.cpp
-#include "../include/EventHandler.h"
-#include "direction.cpp"
+#include "../include/eventHandler.h"
+#include "../include/direction.h"
+
 #include <conio.h>
 
 char EventHandler::getInput() {

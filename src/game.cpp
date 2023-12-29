@@ -1,17 +1,31 @@
 // Game.cpp
 #include "../include/game.h"
-#include <iostream>
+#include "../include/eventhandler.h"
+
+
+Game::Game() : eventHandler(new EventHandler()) {
+    // 생성자에서 eventHandler를 동적으로 할당
+}
+
+Game::~Game() {
+    delete eventHandler; // 소멸자에서 할당 해제
+}
 
 void Game::run() {
+    hide_cursor();
+
+    renderer.drawMap(gameMap);
+
     while (!isGameOver()) {
+        eventHandler->handleInput(*this);
+
         updateGame();
         renderer.render(gameMap, currentMino);
     }
-
-    std::cout << "Game Over!" << std::endl;
 }
 
 void Game::updateGame() {
+    dropBlock();
     if (gameMap.isCollision(currentMino)) {
         // 충돌하면 미노를 맵에 고정하고 새로운 미노 생성
         gameMap.fixMino(currentMino);
@@ -22,13 +36,14 @@ void Game::updateGame() {
     for (int i = 1; i < gameMap.getHeight() - 1; ++i) {
         if (gameMap.isFullLine(i)) {
             gameMap.clearLine(i);
+            renderer.updateMap(gameMap);
         }
     }
 }
 
 bool Game::isGameOver() const {
     for (int i = 0; i < gameMap.getWidth(); ++i) {
-        if (gameMap.getShell(1, i) == 1) {
+        if (gameMap.getShell(1, i) != 0) {
             return true;
         }
     }
@@ -36,15 +51,22 @@ bool Game::isGameOver() const {
 }
 
 void Game::spawnNewMino() {
-    currentMino = Mino();
+    currentMino = new Mino();
+}
+
+void Game::dropBlock() {
+    if (clock() - timeStart > 1000) {
+        moveCurrentMinoDown();
+        timeStart = clock();
+    }
 }
 
 void Game::moveCurrentMinoLeft() {
     renderer.eraesMino(currentMino);
-    currentMino.moveLeft();
+    currentMino->moveLeft();
 
     if (gameMap.isCollision(currentMino)) {
-        currentMino.moveRight();
+        currentMino->moveRight();
     }
 
     renderer.drawMino(currentMino);
@@ -52,10 +74,10 @@ void Game::moveCurrentMinoLeft() {
 
 void Game::moveCurrentMinoRight() {
     renderer.eraesMino(currentMino);
-    currentMino.moveRight();
+    currentMino->moveRight();
 
     if (gameMap.isCollision(currentMino)) {
-        currentMino.moveLeft();
+        currentMino->moveLeft();
     }
     
     renderer.drawMino(currentMino);
@@ -63,10 +85,10 @@ void Game::moveCurrentMinoRight() {
 
 void Game::moveCurrentMinoDown() {
     renderer.eraesMino(currentMino);
-    currentMino.moveDown();
+    currentMino->moveDown();
 
     if (gameMap.isCollision(currentMino)) {
-        currentMino.moveUp();
+        currentMino->moveUp();
         renderer.drawMino(currentMino);
         gameMap.fixMino(currentMino);
         spawnNewMino();
@@ -75,4 +97,10 @@ void Game::moveCurrentMinoDown() {
         renderer.drawMino(currentMino);
     }
 }
-//test
+
+void Game::hide_cursor() {
+    CONSOLE_CURSOR_INFO cursorInfo = { 0, };
+    cursorInfo.dwSize = 1;
+    cursorInfo.bVisible = false;
+    SetConsoleCursorInfo(GetStdHandle(STD_OUTPUT_HANDLE), &cursorInfo);
+}

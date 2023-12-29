@@ -2,10 +2,10 @@
 #include "../include/mino.h"
 
 Mino::Mino() {
-    shape[0] = {0, 0};
-    shape[1] = {0, 1};
-    shape[2] = {1, 0};
-    shape[3] = {1, 1};
+    shape[0] = {5, 1};
+    shape[1] = {6, 1};
+    shape[2] = {5, 2};
+    shape[3] = {6, 2};
 }
 
 const Coordinate* Mino::getShape() const {

@@ -7,25 +7,42 @@ void Renderer::setCursorPosition(int x, int y) const {
     SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE), (COORD){(short)x, (short)y});
 }
 
-void Renderer::render(const Map& gameMap, const Mino& currentMino) {
-    drawMap(gameMap);
+void Renderer::render(const Map& gameMap, const Mino* currentMino) {
     drawBlocks(gameMap);
     drawMino(currentMino);
 }
 
-void Renderer::eraesMino(const Mino& currentMino) {
+void Renderer::eraesMino(const Mino* currentMino) {
     for (int i = 0; i < 4; ++i) {
-        int x = currentMino.getShape()[i].X;
-        int y = currentMino.getShape()[i].Y;
+        int x = currentMino->getShape()[i].X;
+        int y = currentMino->getShape()[i].Y;
         setCursorPosition(x, y);
         std::cout << " ";
     }
 }
 
-void Renderer::drawMino(const Mino& currentMino) { 
+void Renderer::updateMap(const Map& gameMap) {
+    for (int i = 1; i < gameMap.getHeight() - 1; ++i) {
+        for (int j = 1; j < gameMap.getWidth() - 1; ++j) {
+            setCursorPosition(j, i);
+            std::cout << " ";
+        }
+    }
+
+    for (int i = 1; i < gameMap.getHeight() - 1; ++i) {
+        for (int j = 1; j < gameMap.getWidth() - 1; ++j) {
+            if(gameMap.getShell(i, j) != 0) {
+                setCursorPosition(j, i);
+                std::cout << "X";
+            }
+        }
+    }
+}
+
+void Renderer::drawMino(const Mino* currentMino) { 
     for (int i = 0; i < 4; ++i) {
-        int x = currentMino.getShape()[i].X;
-        int y = currentMino.getShape()[i].Y;
+        int x = currentMino->getShape()[i].X;
+        int y = currentMino->getShape()[i].Y;
         setCursorPosition(x, y);
         std::cout << "бс";
     }

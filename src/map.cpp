@@ -36,14 +36,15 @@ void Map::clearLine(int lineNumber) {
             shell[i][j] = shell[i - 1][j];
         }
     }
+    
 }
 
-bool Map::isCollision(const Mino& mino) const {
+bool Map::isCollision(const Mino* mino) const {
     for (int i = 0; i < 4; i++) {
-        int x = mino.getShape()[i].X;
-        int y = mino.getShape()[i].Y;
+        int x = mino->getShape()[i].X;
+        int y = mino->getShape()[i].Y;
 
-        if (y >= HEIGHT + 1 || x <= 0 || x >= WIDTH + 1 || shell[y][x] != 0) {
+        if (y >= HEIGHT - 1 || x <= 0 || x >= WIDTH - 1 || shell[y][x] != 0) {
             return true;
         }
     }
@@ -52,7 +53,7 @@ bool Map::isCollision(const Mino& mino) const {
 
 bool Map::isFullLine(int lineNumber) const {
     // 특정 행이 가득 찼는지 확인
-    for (int j = 1; j < WIDTH + 1; j++) {
+    for (int j = 1; j < WIDTH - 1; j++) {
         if (shell[lineNumber][j] == 0) {
             return false; // 비어있는 곳이 있으면 가득 차지 않음
         }
@@ -61,11 +62,11 @@ bool Map::isFullLine(int lineNumber) const {
 
 }
 
-void Map::fixMino(const Mino& mino) {
+void Map::fixMino(const Mino* mino) {
     // 미노를 맵에 고정
     for (int i = 0; i < 4; i++) {
-        int x = mino.getShape()[i].X;
-        int y = mino.getShape()[i].Y;
+        int x = mino->getShape()[i].X;
+        int y = mino->getShape()[i].Y;
 
         if (y >= 1 && y <= HEIGHT && x >= 1 && x <= WIDTH) {
             shell[y][x] = 1;

@@ -1,8 +1,11 @@
 // EventHandler.h
 #pragma once
 
-#include "Game.h"
-#include "direction.h"
+#include <conio.h>
+
+#include "game.h"
+
+class Game;
 
 class EventHandler {
 private:
