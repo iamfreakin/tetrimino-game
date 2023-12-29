@@ -69,7 +69,7 @@ void Game::moveCurrentMinoLeft() {
         currentMino->moveRight();
     }
 
-    renderer.drawMino(currentMino);
+    renderer.drawMino(*currentMino);
 }
 
 void Game::moveCurrentMinoRight() {
@@ -80,21 +80,21 @@ void Game::moveCurrentMinoRight() {
         currentMino->moveLeft();
     }
     
-    renderer.drawMino(currentMino);
+    renderer.drawMino(*currentMino);
 }
-
+//매개변수
 void Game::moveCurrentMinoDown() {
     renderer.eraesMino(currentMino);
     currentMino->moveDown();
 
     if (gameMap.isCollision(currentMino)) {
         currentMino->moveUp();
-        renderer.drawMino(currentMino);
+        renderer.drawMino(*currentMino);
         gameMap.fixMino(currentMino);
         spawnNewMino();
     }
     else {
-        renderer.drawMino(currentMino);
+        renderer.drawMino(*currentMino);
     }
 }
 
@@ -106,7 +106,7 @@ void Game::rotateCurrentMinoClockwise(){
         currentMino->rotateCounterClockwise();
     }
     
-    renderer.drawMino(currentMino);
+    renderer.drawMino(*currentMino);
 }
 
 void Game::hide_cursor() {

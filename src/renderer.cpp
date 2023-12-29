@@ -9,7 +9,7 @@ void Renderer::setCursorPosition(int x, int y) const {
 
 void Renderer::render(const Map& gameMap, const Mino* currentMino) {
     drawBlocks(gameMap);
-    drawMino(currentMino);
+    drawMino(*currentMino);
 }
 
 void Renderer::eraesMino(const Mino* currentMino) {
@@ -39,10 +39,10 @@ void Renderer::updateMap(const Map& gameMap) {
     }
 }
 
-void Renderer::drawMino(const Mino* currentMino) { 
+void Renderer::drawMino(const Mino& currentMino) { 
     for (int i = 0; i < 4; ++i) {
-        int x = currentMino->getShape()[i].X;
-        int y = currentMino->getShape()[i].Y;
+        int x = currentMino.getShape()[i].X;
+        int y = currentMino.getShape()[i].Y;
         setCursorPosition(x, y);
         std::cout << "O";
     }

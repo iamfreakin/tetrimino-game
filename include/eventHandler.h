@@ -7,7 +7,7 @@
 
 class Game;
 
-class EventHandler {
+class EventHandler { //이름 다시생각하기
 private:
     char getInput();
 

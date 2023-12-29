@@ -5,13 +5,14 @@
 #include <cstdlib>
 #include <ctime>
 
-class Mino {
+class Mino { //블럭자체만 구현 구조체로
+                //물리계산 클래스 따로 만들기
 private:
     static const int SIZE = 4;
     static const int NUMBER = 7;
 
     Coordinate shape[SIZE];
-    Coordinate minoshape[NUMBER][SIZE] = {
+    Coordinate minoshape[NUMBER][SIZE] = { //블럭에 좌표값 추가하지 않고 해봐야할듯
         {
             {6,1},
             {6,2},
@@ -44,9 +45,9 @@ private:
         },
         {
             {6,1},
-            {6,2},
-            {7,2},
-            {7,2}
+            {7,1},
+            {8,1},
+            {8,2}
         },
         {
             {7,1},
@@ -58,13 +59,15 @@ private:
 
 
 public:
+
     Mino();
     const Coordinate* getShape() const;
-    void setRandomShape();
+    void setRandomShape(); //game으로 옮기기
     void moveLeft();
     void moveRight();
     void moveDown();
     void moveUp();
     void rotateClockwise();
     void rotateCounterClockwise();
+    
 };
