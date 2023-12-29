@@ -54,9 +54,11 @@ void Mino::rotateClockwise() {
 }
 
 void Mino::rotateCounterClockwise() {
+    int tempx = shape[0].X;
+    int tempy = shape[0].Y;
     for (int i = 0; i < SIZE; ++i) {
-        int temp = shape[i].X;
-        shape[i].X = -shape[i].Y;
-        shape[i].Y = temp;
+        int temp = shape[i].X - tempx;
+        shape[i].X = -shape[i].Y - tempy + tempx;
+        shape[i].Y = temp + tempy;
     }
 }
